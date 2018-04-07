@@ -31,25 +31,33 @@
           <div class="card-body p-4">
             <h1>Register</h1>
             <p class="text-muted">Create your account</p>
+            <form action="<?php echo base_url();?>index.php/register/registerUser" method="post" name="register">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="icon-user"></i></span>
               </div>
-              <input type="text" class="form-control" placeholder="Username">
+              <input type="text" class="form-control" placeholder="Username" name="username">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="icon-user"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Name" name="name">
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text">@</span>
               </div>
-              <input type="text" class="form-control" placeholder="Email">
+              <input type="text" class="form-control" placeholder="Email" name="email">
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="icon-lock"></i></span>
               </div>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password" name="password">
             </div>
 
             <div class="input-group mb-4">
@@ -59,7 +67,8 @@
               <input type="password" class="form-control" placeholder="Repeat password">
             </div>
 
-            <button type="button" class="btn btn-block btn-success">Create Account</button>
+            <button type="submit" class="btn btn-block btn-success">Create Account</button>
+            </form>
           </div>
           <!-- <div class="card-footer p-4">
             <div class="row">

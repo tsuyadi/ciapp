@@ -36,13 +36,20 @@ class M_login extends CI_Model
   }
   
   
-  public function getDataUser($username)
+  public function registerUser($username, $name, $email, $password)
   {
-	$this->db->select('*');
-   $this->db->where('username', $username);
-   $query = $this->db->get('users');
 
-   return $query->row();
+    $hash = $this->hashSSHA($password);
+
+	$data = array (
+        'username' => $username,  //input kedalam field nim
+        'name'  => $name, //input kedalam field nama
+        'email' => $email,
+        'password'=> $hash['encrypted'],
+        'salt' => $hash['salt'],
+        'status' => '1'
+       );
+       $this->db->insert('users',$data);//insert data di tabel users
   }
 
   /**
