@@ -27,7 +27,7 @@
         <a class="nav-link" href="#"><i class="icon-list"></i></a>
       </li>
       <li class="nav-item d-md-down-none">
-        <a class="nav-link" href="#">Selamat datang, <?php echo $user->name ;?></a>
+        <a class="nav-link" href="#">Selamat datang, <?php echo $session_user['user']->name ;?></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -51,87 +51,46 @@
 
     <div class="app-body">
     <div class="sidebar">
+    <div class="sidebar-header">
+        <img src="<?php echo base_url();?>assets/img/avatars/8.jpg" class="img-avatar" alt="Avatar">
+        <div>
+          <strong><?php echo $session_user['user']->name ;?></strong>
+        </div>
+        <div class="text-muted">
+          <small><?php echo $session_user['user']->email ;?></small>
+        </div>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-link">
+            <i class="icon-settings"></i>
+          </button>
+          <button type="button" class="btn btn-link">
+            <i class="icon-speech"></i>
+          </button>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="icon-user"></i>
+            </button>
+            <div class="dropdown-menu">
+              <div class="dropdown-header text-center">
+                <strong>Account</strong>
+              </div>
+              <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+              <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url();?>index.php/home"><i class="icon-speedometer"></i> Dashboard </a>
           </li>
           <li class="nav-title">
-            Components
-          </li>
-          <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-cursor"></i> Buttons</a>
-            <ul class="nav-dropdown-items">
-              <li class="nav-item">
-                <a class="nav-link" href="buttons-buttons.html"><i class="icon-cursor"></i> Buttons</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buttons-button-group.html"><i class="icon-cursor"></i> Buttons Group</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buttons-dropdowns.html"><i class="icon-cursor"></i> Dropdowns</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buttons-social-buttons.html"><i class="icon-cursor"></i> Social Buttons</a>
-              </li>
-            </ul>
+            Menus
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="charts.html"><i class="icon-pie-chart"></i> Charts</a>
-          </li>
-          <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Icons</a>
-            <ul class="nav-dropdown-items">
-              <li class="nav-item">
-                <a class="nav-link" href="icons-flags.html"><i class="icon-star"></i> Flags <span class="badge badge-success">NEW</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="icons-font-awesome.html"><i class="icon-star"></i> Font Awesome <span class="badge badge-secondary">4.7</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="icons-simple-line-icons.html"><i class="icon-star"></i> Simple Line Icons</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bell"></i> Notifications</a>
-            <ul class="nav-dropdown-items">
-              <li class="nav-item">
-                <a class="nav-link" href="notifications-alerts.html"><i class="icon-bell"></i> Alerts</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="notifications-badge.html"><i class="icon-bell"></i> Badge</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="notifications-modals.html"><i class="icon-bell"></i> Modals</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="widgets.html"><i class="icon-calculator"></i> Widgets <span class="badge badge-primary">NEW</span></a>
-          </li>
-          <li class="divider"></li>
-          <li class="nav-title">
-            Extras
-          </li>
-          <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Pages</a>
-            <ul class="nav-dropdown-items">
-              <li class="nav-item">
-                <a class="nav-link" href="pages-login.html" target="_top"><i class="icon-star"></i> Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages-register.html" target="_top"><i class="icon-star"></i> Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages-404.html" target="_top"><i class="icon-star"></i> Error 404</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages-500.html" target="_top"><i class="icon-star"></i> Error 500</a>
-              </li>
-            </ul>
-          </li>
+          <?php echo $session_user['menu'];?>
+
           <li class="nav-item mt-auto">
             <a class="nav-link nav-link-success" href="http://coreui.io/" target="_top"><i class="icon-cloud-download"></i> Download CoreUI</a>
           </li>

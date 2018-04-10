@@ -3942,6 +3942,10 @@ tbody.collapse.show {
         justify-content: space-between; }
 
 .navbar-brand {
+     color: #2a2c36;
+}
+
+.navbar-brand {
   display: inline-block;
   padding-top: 0.33594rem;
   padding-bottom: 0.33594rem;
