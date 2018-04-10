@@ -81,12 +81,14 @@ class Home extends CI_Controller {
         $listMenus="";
         $i = 0;
 
+        $url = $this->config->config['base_url'];
+
         foreach($menu as $menus){
             $parent = $menu[$i]['menu_parent'];
 
             if( $parent == $menuid ){
                 $child .= "<li class=\"nav-item\">"
-                       .  "<a class=\"nav-link\" href=\"#\" target=\"_top\"><i class=\"icon-cursor\"></i>". $menu[$i]['menu_name']."</a>"
+                       .  "<a class=\"nav-link\" href=\"#\" onclick=\"loadPage('".$url."/". $menu[$i]['menu_url'] ."')\" target=\"_top\"><i class=\"icon-cursor\"></i>". $menu[$i]['menu_name']."</a>"
                        .  "</li>";
             }
 

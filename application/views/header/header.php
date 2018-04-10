@@ -19,4 +19,10 @@
   <link href="<?php echo base_url('assets/coreui/css/style.css');?>" rel="stylesheet">
   <!-- Styles required by this views -->
 
+    <script>
+      function loadPage(page){
+          $("#page").load(page);
+      }
+  </script>
+
 </head>
