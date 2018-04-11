@@ -15,247 +15,73 @@
       </ol>
 
       <div class="container-fluid">
-
         <div class="animated fadeIn">
-            <div class="row">
-            <table class="table table-responsive-sm table-hover table-outline mb-0">
+            <div class="card">
+            <div class="card-header">
+                Data Sekolah
+            </div>
+            <div class="card-body">
+            <table id="myTable" class="table table-responsive-sm table-hover table-outline mb-0" width="100%">
                     <thead class="thead-light">
                       <tr>
-                        <th class="text-center"><i class="icon-people"></i></th>
-                        <th>User</th>
-                        <th class="text-center">Country</th>
-                        <th>Usage</th>
-                        <th class="text-center">Payment Method</th>
-                        <th>Activity</th>
+                        <th class="text-center">No. </th>
+                        <th class="text-center">Nama Sekolah</th>
+                        <th class="text-center">Akreditasi</th>
+                        <th class="text-center">Alamat Sekolah</th>
+                        <th class="text-center">Jenis Sekolah</th>
+                        <th class="text-center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
+                    <?php foreach($listSekolah as $i=>$row): ?>
                       <tr>
                         <td class="text-center">
-                          <div class="avatar">
-                            <img src="<?php echo base_url('assets/img/avatars/1.jpg');?>" class="img-avatar" alt="admin@bootstrapmaster.com">
-                            <span class="avatar-status badge-success"></span>
-                          </div>
+                            <?php echo $i + 1;?>
                         </td>
                         <td>
-                          <div>Yiorgos Avraamu</div>
-                          <div class="small text-muted">
-                            <span>New</span> | Registered: Jan 1, 2015
-                          </div>
+                          <?php echo $row['nama_sekolah'] ;?>
                         </td>
                         <td class="text-center">
-                          <i class="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
+                             <?php echo $row['akreditasi'] ;?>
                         </td>
                         <td>
-                          <div class="clearfix">
-                            <div class="float-left">
-                              <strong>50%</strong>
+                          <div><?php echo $row['alamat_sekolah'] ;?></div>
+                            <div class="small text-muted">
+                              <span>Kode pos :</span> | <?php echo $row['kode_pos'] ;?>
                             </div>
-                            <div class="float-right">
-                              <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                            </div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
                         </td>
                         <td class="text-center">
-                          <i class="fa fa-cc-mastercard" style="font-size:24px"></i>
+                            <?php echo $row['jenis_sekolah'] ;?>
                         </td>
-                        <td>
-                          <div class="small text-muted">Last login</div>
-                          <strong>10 sec ago</strong>
+                        <td class="text-center">
+                            <a class="btn btn-success" href="#">
+                            <i class="fa fa-search-plus "></i>
+                            </a>
+                            <a class="btn btn-info" href="#">
+                            <i class="fa fa-edit "></i>
+                            </a>
+                            <a class="btn btn-danger" href="#">
+                            <i class="fa fa-trash-o "></i>
+                            </a>
                         </td>
                       </tr>
-                      <tr>
-                        <td class="text-center">
-                          <div class="avatar">
-                            <img src="<?php echo base_url('assets/img/avatars/2.jpg');?>" class="img-avatar" alt="admin@bootstrapmaster.com">
-                            <span class="avatar-status badge-danger"></span>
-                          </div>
-                        </td>
-                        <td>
-                          <div>Avram Tarasios</div>
-                          <div class="small text-muted">
-
-                            <span>Recurring</span> | Registered: Jan 1, 2015
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
-                        </td>
-                        <td>
-                          <div class="clearfix">
-                            <div class="float-left">
-                              <strong>10%</strong>
-                            </div>
-                            <div class="float-right">
-                              <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                            </div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="fa fa-cc-visa" style="font-size:24px"></i>
-                        </td>
-                        <td>
-                          <div class="small text-muted">Last login</div>
-                          <strong>5 minutes ago</strong>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">
-                          <div class="avatar">
-                            <img src="<?php echo base_url('assets/img/avatars/3.jpg');?>" class="img-avatar" alt="admin@bootstrapmaster.com">
-                            <span class="avatar-status badge-warning"></span>
-                          </div>
-                        </td>
-                        <td>
-                          <div>Quintin Ed</div>
-                          <div class="small text-muted">
-                            <span>New</span> | Registered: Jan 1, 2015
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
-                        </td>
-                        <td>
-                          <div class="clearfix">
-                            <div class="float-left">
-                              <strong>74%</strong>
-                            </div>
-                            <div class="float-right">
-                              <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                            </div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="fa fa-cc-stripe" style="font-size:24px"></i>
-                        </td>
-                        <td>
-                          <div class="small text-muted">Last login</div>
-                          <strong>1 hour ago</strong>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">
-                          <div class="avatar">
-                            <img src="<?php echo base_url('assets/img/avatars/4.jpg');?>" class="img-avatar" alt="admin@bootstrapmaster.com">
-                            <span class="avatar-status badge-secondary"></span>
-                          </div>
-                        </td>
-                        <td>
-                          <div>Enéas Kwadwo</div>
-                          <div class="small text-muted">
-                            <span>New</span> | Registered: Jan 1, 2015
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
-                        </td>
-                        <td>
-                          <div class="clearfix">
-                            <div class="float-left">
-                              <strong>98%</strong>
-                            </div>
-                            <div class="float-right">
-                              <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                            </div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="fa fa-paypal" style="font-size:24px"></i>
-                        </td>
-                        <td>
-                          <div class="small text-muted">Last login</div>
-                          <strong>Last month</strong>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">
-                          <div class="avatar">
-                            <img src="<?php echo base_url('assets/img/avatars/5.jpg');?>" class="img-avatar" alt="admin@bootstrapmaster.com">
-                            <span class="avatar-status badge-success"></span>
-                          </div>
-                        </td>
-                        <td>
-                          <div>Agapetus Tadeáš</div>
-                          <div class="small text-muted">
-                            <span>New</span> | Registered: Jan 1, 2015
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
-                        </td>
-                        <td>
-                          <div class="clearfix">
-                            <div class="float-left">
-                              <strong>22%</strong>
-                            </div>
-                            <div class="float-right">
-                              <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                            </div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="fa fa-google-wallet" style="font-size:24px"></i>
-                        </td>
-                        <td>
-                          <div class="small text-muted">Last login</div>
-                          <strong>Last week</strong>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">
-                          <div class="avatar">
-                            <img src="<?php echo base_url('assets/img/avatars/6.jpg');?>" class="img-avatar" alt="admin@bootstrapmaster.com">
-                            <span class="avatar-status badge-danger"></span>
-                          </div>
-                        </td>
-                        <td>
-                          <div>Friderik Dávid</div>
-                          <div class="small text-muted">
-                            <span>New</span> | Registered: Jan 1, 2015
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
-                        </td>
-                        <td>
-                          <div class="clearfix">
-                            <div class="float-left">
-                              <strong>43%</strong>
-                            </div>
-                            <div class="float-right">
-                              <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                            </div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="text-center">
-                          <i class="fa fa-cc-amex" style="font-size:24px"></i>
-                        </td>
-                        <td>
-                          <div class="small text-muted">Last login</div>
-                          <strong>Yesterday</strong>
-                        </td>
-                      </tr>
+                    <?php endforeach; ?>
                     </tbody>
                   </table>
+                </div>
             </div>
         </div>
       </div>
+
+  <!-- Datatables plugins -->
+  <link href="<?php echo base_url('assets/node_modules/datatables.net-dt/css/jquery.dataTables.css');?>" rel="stylesheet">
+  <script src="<?php echo base_url('assets/node_modules/datatables.net/js/jquery.dataTables.js');?>"></script>
+
+      <script>
+        $(document).ready(function(){
+          $("#myTable").dataTable();
+          // var listSekolah =
+          // alert("test : " + listSekolah);
+        });
+      </script>
 <!-- /.conainer-fluid -->

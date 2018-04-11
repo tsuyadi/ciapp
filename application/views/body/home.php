@@ -1,5 +1,11 @@
     <!-- Main content -->
     <main class="main">
-        <div id="page"><?php $this->load->view('body/home1') ;?></div>
+        <div id="page"><?php $this->load->view('body/dashboard') ;?></div>
     </main>
   </div>
+  
+  <script>
+      function loadPage(page){
+          $("#page").load(page);
+      }
+  </script>
