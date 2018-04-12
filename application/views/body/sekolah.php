@@ -18,7 +18,7 @@
         <div class="animated fadeIn">
             <div class="card">
             <div class="card-header">
-                Data Sekolah
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>&nbsp;Data Sekolah</button>
             </div>
             <div class="card-body">
             <table id="myTable" class="table table-responsive-sm table-hover table-outline mb-0" width="100%">
@@ -72,6 +72,97 @@
             </div>
         </div>
       </div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Tambah Data Sekolah</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <div class="card">
+                <!-- <div class="card-header">
+                  <strong>Normal</strong>
+                  Form
+                </div> -->
+                <div class="card-body">
+                  <form action="" method="post">
+                  <div class="form-group">
+                      <label for="nf-email">Kode Sekolah</label>
+                      <input type="email" id="kodeSekolah" name="kodeSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your email</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-email">Nama Sekolah</label>
+                      <input type="email" id="namaSekolah" name="namaSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your email</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Alamat Sekolah</label>
+                      <textarea id="alamatSekolah" name="alamatSekolah" row="6" class="form-control" ></textarea>
+                      <!-- <span class="help-block">Please enter your password</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Propinsi</label>
+                      <input type="password" id="alamatSekolah" name="alamatSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your password</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Kota/Kabupaten</label>
+                      <input type="password" id="alamatSekolah" name="alamatSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your password</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Kecamatan</label>
+                      <input type="password" id="alamatSekolah" name="alamatSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your password</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Kelurahan</label>
+                      <input type="password" id="alamatSekolah" name="alamatSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your password</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Kode Pos</label>
+                      <input type="password" id="alamatSekolah" name="alamatSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your password</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Jenis Sekolah</label>
+                      <input type="password" id="alamatSekolah" name="alamatSekolah" class="form-control" >
+                      <!-- <span class="help-block">Please enter your password</span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="nf-password">Akreditasi</label>
+                      <select id="select1" name="select1" class="form-control">
+                          <option value="0">--Pilih Akreditasi--</option>
+                          <option value="1">A</option>
+                          <option value="2">B</option>
+                          <option value="3">C</option>
+                        </select>
+                    </div>
+                  </form>
+                </div>
+                <!-- <div class="card-footer">
+                  <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                </div> -->
+              </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
 
   <!-- Datatables plugins -->
   <link href="<?php echo base_url('assets/node_modules/datatables.net-dt/css/jquery.dataTables.css');?>" rel="stylesheet">
