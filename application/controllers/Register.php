@@ -25,15 +25,8 @@ class Register extends CI_Controller {
 
 		$this->m_login->registerUser($username, $name, $email, $password);
 
-		// $hash = $this->m_login->hashSSHA($password);
+		$data['warning'] = "Registration success";
+		$this->load->view('pages-login', $data); 
 
-		// if($status <> false){
-		// 	$this->session->set_userdata('isLogin', TRUE);
-		// 	$this->session->set_userdata('user', $status);
-		// 	redirect('/home', 'refresh');
-		// }else{
-			$data['warning'] = "Registration success";
-			$this->load->view('pages-login', $data); 
-		// }
 	}
 }

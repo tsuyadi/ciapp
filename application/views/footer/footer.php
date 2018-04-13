@@ -7,7 +7,7 @@
   <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.min.js');?>"></script>
   <script src="<?php echo base_url('assets/node_modules/popper.js/dist/umd/popper.min.js');?>"></script>
   <script src="<?php echo base_url('assets/node_modules/bootstrap/dist/js/bootstrap.min.js');?>"></script>
-  <script src="<?php echo base_url('assets/node_modules/pace-progress/pace.min.js');?>"></script>
+  <script src="<?php echo base_url('assets/node_modules/pace-progress/pace.js');?>"></script>
 
   <!-- Plugins and scripts required by all views -->
   <script src="<?php echo base_url('assets/node_modules/chart.js/dist/Chart.min.js');?>"></script>
@@ -20,6 +20,24 @@
 
   <!-- Custom scripts required by this view -->
   <script src="<?php echo base_url('assets/coreui/js/views/main.js');?>"></script>
+
+  <script>
+        $(document).ready(function(){
+            $(document).ajaxStart(function(){
+              console.log("START AJAX");
+              $("#modalSpinner").modal({backdrop: 'static', keyboard: false, show: true});
+            });
+            $(document).ajaxComplete(function(){
+              console.log("COMPLETE AJAX");
+              $("#modalSpinner").modal('hide');
+              $("#modalSpinner").css('display', 'none');
+            });
+        });
+
+        function loadPage(page){
+          $("#page").load(page);
+        }
+  </script>
 
 </body>
 </html>

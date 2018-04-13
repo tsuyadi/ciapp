@@ -12,14 +12,33 @@ class Master extends CI_Controller {
 		
 	}
 
-    public function sekolah(){
+    public function getKotaKab(){
 
-        $listSekolah = $this->m_master->getListSekolah();
+        $id = $this->input->post('id');
+        $data = $this->m_master->getKotaKab($id);
 
-        $data['listSekolah']= $listSekolah;
-        
-        $this->load->view('body/sekolah', $data);
+        echo json_encode($data);
+
     }
+
+    public function getKecamatan(){
+
+        $id = $this->input->post('id');
+        $data = $this->m_master->getKecamatan($id);
+
+        echo json_encode($data);
+
+    }
+
+    public function getKelurahan(){
+
+        $id = $this->input->post('id');
+        $data = $this->m_master->getKelurahan($id);
+
+        echo json_encode($data);
+
+    }
+
 
     public function siswa(){
         $this->load->view('body/siswa');
