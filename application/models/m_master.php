@@ -47,33 +47,103 @@ class M_master extends CI_Model
        }      
   }
 
-  public function deleteSekolah($id){
+    public function deleteSekolah($id){
 
-    $sql = "delete from data_sekolah where id=".$id;
+        $sql = "delete from data_sekolah where id=".$id;
 
-    if($this->db->query($sql)){
-        return 0;
-    }else{
-     $error = $this->db->error();
-        return 1;
-    }      
-}
-
-  public function getPropinsi()
-  {
-    $this->db->select('*');
-    $this->db->from('propinsi');
-    $query = $this->db->get();
-
-    if($query->num_rows() != 0)
-    {
-        return $query->result_array();
+        if($this->db->query($sql)){
+            return 0;
+        }else{
+        $error = $this->db->error();
+            return 1;
+        }      
     }
-    else
-    {
-        return false;
+
+    public function getListGuru(){
+        $query = $this->db->query("select * from pengajar");
+            return $query->result_array();
     }
-  }
+
+    public function addGuru($data){
+
+        if($this->db->insert('pengajar',$data)){
+            return 0;
+        }else{
+            $error = $this->db->error();
+            return 1;
+        }      
+    }
+
+    public function deleteGuru($id){
+
+        $sql = "delete from pengajar where id=".$id;
+
+        if($this->db->query($sql)){
+            return 0;
+        }else{
+        $error = $this->db->error();
+            return 1;
+        }      
+    }
+
+    public function getListSiswa(){
+        $query = $this->db->query("select * from siswa");
+            return $query->result_array();
+    }
+
+    public function addSiswa($data){
+
+        if($this->db->insert('siswa',$data)){
+            return 0;
+        }else{
+            $error = $this->db->error();
+            return 1;
+        }      
+    }
+
+    public function searchSiswa($id){
+
+        $sql = "select * from siswa where Id=".$id;
+
+        $query = $this->db->query($sql);
+
+        return $query->row();
+    }
+
+    public function deleteSiswa($id){
+
+        $sql = "delete from siswa where id=".$id;
+
+        if($this->db->query($sql)){
+            return 0;
+        }else{
+        $error = $this->db->error();
+            return 1;
+        }      
+    }
+
+    public function updateSiswa($data){
+
+        if($this->db->replace('siswa',$data)){
+            return 0;
+        }else{
+            $error = $this->db->error();
+            return 1;
+        }      
+    }
+
+    public function getPropinsi()
+    {
+        $this->db->select('*');
+        $this->db->from('propinsi');
+        $query = $this->db->get();
+
+        if($query->num_rows() != 0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
 
   public function getKotaKab($id)
   {

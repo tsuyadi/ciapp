@@ -40,12 +40,4 @@ class Master extends CI_Controller {
     }
 
 
-    public function siswa(){
-        $this->load->view('body/siswa');
-    }
-
-    public function guru(){
-        $this->load->view('body/guru');
-    }
-
 }

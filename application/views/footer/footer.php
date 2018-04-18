@@ -24,13 +24,10 @@
   <script>
         $(document).ready(function(){
             $(document).ajaxStart(function(){
-              console.log("START AJAX");
               $("#modalSpinner").modal({backdrop: 'static', keyboard: false, show: true});
             });
-            $(document).ajaxComplete(function(){
-              console.log("COMPLETE AJAX");
+            $(document).ajaxStop(function(){
               $("#modalSpinner").modal('hide');
-              $("#modalSpinner").css('display', 'none');
             });
         });
 
